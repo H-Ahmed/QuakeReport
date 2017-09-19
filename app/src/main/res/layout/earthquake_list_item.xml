@@ -37,7 +37,7 @@
             android:textAllCaps="true"
             android:textColor="@color/textColorEarthquakeDetails"
             android:textSize="12sp"
-            tools:text="88 km of" />
+            tools:text="88 km of no i need this more than wide of the width of textView" />
 
         <TextView
             android:id="@+id/primary_location"
