@@ -37,6 +37,9 @@ public final class QueryUtils {
     }
 
     public static List<Earthquake> fetchEarthquakeData(String requestUrl){
+
+        Log.v("loaderManagerInitLoader", "fetchEarthquakeData");
+
         // create URL  object
         URL url = createUrl(requestUrl);
 
@@ -60,7 +63,7 @@ public final class QueryUtils {
      * @param stringUrl
      * @return new URL object from the given string URL
      */
-    public static URL createUrl(String stringUrl){
+    private static URL createUrl(String stringUrl){
         URL url = null;
         try {
             url = new URL(stringUrl);
@@ -76,7 +79,7 @@ public final class QueryUtils {
      * @return
      * @throws IOException
      */
-    public static String makeHttpRequest (URL url) throws IOException {
+    private static String makeHttpRequest (URL url) throws IOException {
         String jsonResponse = "";
 
         // if the URL is null, the return early
@@ -144,7 +147,7 @@ public final class QueryUtils {
      * Return a list of {@link Earthquake} objects that has been built up from
      * parsing a JSON response.
      */
-    public static List<Earthquake> extractFeatureFromJson(String jsonResponse) {
+    private static List<Earthquake> extractFeatureFromJson(String jsonResponse) {
 
         // If the JSON string is empty or null, then return early.
         if(TextUtils.isEmpty(jsonResponse)){
