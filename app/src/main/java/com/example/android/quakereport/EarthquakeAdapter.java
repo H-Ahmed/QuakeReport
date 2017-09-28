@@ -105,8 +105,9 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         // Create a new Date object from the time in millisecond of the earthquake
         Date dateObject = new Date(currentearthquake.getmTimeInMilliseconds());
+        Log.v("Date", String.valueOf(currentearthquake.getmTimeInMilliseconds()));
         // formatted date string (i.e. "Mar 3, 1984") from a Date object
-        SimpleDateFormat dateFormate = new SimpleDateFormat("MMM DD, yyyy");
+        SimpleDateFormat dateFormate = new SimpleDateFormat("MMM dd, yyyy");
         // formatted date string (i.e. "4:30 PM") from a Date object.
         SimpleDateFormat timeFormate = new SimpleDateFormat("HH:mm aaa");
 
@@ -116,6 +117,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         TextView dateView  = (TextView) listViewItem.findViewById(R.id.date);
         // Formate the date String (i.e. "Mar 3, 1984")
         String dateToDisplay = dateFormate.format(dateObject);
+        Log.v("Date", dateToDisplay);
         // Display the date  of the current earthquake in thar TextView
         dateView .setText(dateToDisplay);
 
